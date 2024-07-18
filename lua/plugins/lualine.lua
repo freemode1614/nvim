@@ -15,6 +15,7 @@ return {
           hint = icons.diagnostics.Hint,
         },
         separator = "",
+        padding = { left = 2, right = 0 },
       },
       { "filename", path = 1, separator = "" },
       { "filetype", icon_only = true, separator = "", padding = { left = 0, right = 0 } },
