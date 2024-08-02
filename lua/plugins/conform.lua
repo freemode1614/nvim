@@ -16,6 +16,7 @@ return {
           return { "isort", "black" }
         end
       end,
+      handlebars = { "djlint" },
       ["*"] = { "codespell" },
       ["_"] = { "trim_whitespace" },
     }
