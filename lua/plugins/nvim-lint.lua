@@ -9,7 +9,7 @@ return {
       opts.linters_by_ft["markdown"] = { "markdownlint-cli2" }
       opts.linters_by_ft["markdown.md"] = { "markdownlint-cli2" }
       opts.linters_by_ft["json"] = { "jsonlint" }
-      opts.linters_by_ft["*"] = { "cspell" }
+      -- opts.linters_by_ft["*"] = { "cspell" }
     end,
   },
 }
