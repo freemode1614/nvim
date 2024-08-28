@@ -7,8 +7,8 @@ return {
       window = {
         position = "float",
         popup = {
-          size = { height = "45", width = "45" },
-          position = "8",
+          size = { height = "80%", width = "60" },
+          position = "5",
         },
       },
       filesystem = {

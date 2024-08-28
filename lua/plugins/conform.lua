@@ -17,7 +17,7 @@ return {
         end
       end,
       handlebars = { "djlint" },
-      ["*"] = { "codespell" },
+      -- ["*"] = { "codespell" },
       ["_"] = { "trim_whitespace" },
     }
 
