@@ -1,4 +1,18 @@
 return {
   "neovim/nvim-lspconfig",
-  opts = { autoformat = false },
+  opts = {
+    servers = {
+      -- Disable vtsls format
+      vtsls = {
+        init_options = {
+          provideFormatter = false,
+        },
+      },
+      tsserver = {
+        init_options = {
+          provideFormatter = false,
+        },
+      },
+    },
+  },
 }
