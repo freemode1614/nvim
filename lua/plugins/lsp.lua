@@ -8,11 +8,6 @@ return {
           provideFormatter = false,
         },
       },
-      tsserver = {
-        init_options = {
-          provideFormatter = false,
-        },
-      },
     },
   },
 }
