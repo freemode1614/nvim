@@ -1,9 +1,18 @@
+-- 分割字符串
+local function split(str, reps)
+  local resultStrList = {}
+  string.gsub(str, "[^" .. reps .. "]+", function(w)
+    table.insert(resultStrList, w)
+  end)
+  return resultStrList
+end
+
 return {
   "nvim-lualine/lualine.nvim",
   opts = function(_, opts)
     local icons = LazyVim.config.icons
     opts.options.section_separators = { left = "", right = "" }
-    opts.options.component_separators = { left = "", right = "" }
+    opts.options.component_separators = { left = "", right = "" }
     opts.sections.lualine_c = {
       LazyVim.lualine.root_dir(),
       {
@@ -29,11 +38,23 @@ return {
 
     opts.sections.lualine_z = {
       function()
-        return "  " .. os.date("%X")
+        return " " .. os.date("%X")
+      end,
+      function()
+        local list = split(os.getenv("PWD"), "/")
+        return LazyVim.config.icons.kinds.Folder .. list[#list]
       end,
     }
 
-    opts.options.disabled_filetypes =
-      { statusline = { "dashboard", "alpha", "starter", "fzf", "ministarter", "lazyterm" } }
+    opts.options.disabled_filetypes = {
+      statusline = {
+        "dashboard",
+        "alpha",
+        "starter",
+        "fzf",
+        "ministarter",
+        "lazyterm",
+      },
+    }
   end,
 }
