@@ -18,10 +18,10 @@ return {
       {
         "diagnostics",
         symbols = {
-          error = icons.diagnostics.Error,
           warn = icons.diagnostics.Warn,
           info = icons.diagnostics.Info,
           hint = icons.diagnostics.Hint,
+          error = icons.diagnostics.Error,
         },
         separator = "",
         padding = { left = 2, right = 0 },
