@@ -1,4 +1,3 @@
-local fs = require("vim.fs")
 local os = require("os")
 
 return {
