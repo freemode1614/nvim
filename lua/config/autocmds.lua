@@ -8,3 +8,8 @@ vim.api.nvim_create_autocmd("BufRead", {
     vim.cmd("TSBufEnable highlight")
   end,
 })
+
+vim.api.nvim_create_autocmd({ "FileType" }, {
+  pattern = { "tsx", "ts" },
+  callback = function(ev) end,
+})
