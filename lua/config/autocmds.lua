@@ -10,6 +10,8 @@ vim.api.nvim_create_autocmd("BufRead", {
 })
 
 vim.api.nvim_create_autocmd({ "FileType" }, {
-  pattern = { "tsx", "ts" },
-  callback = function(ev) end,
+  pattern = { "typescriptreact", "typescript" },
+  callback = function()
+    vim.b.autoformat = false
+  end,
 })

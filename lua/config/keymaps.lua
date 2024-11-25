@@ -5,7 +5,7 @@
 local Snacks = require("snacks")
 
 vim.keymap.set("n", "<C-/>", function()
-  Snacks.terminal(nil, { border = "rounded" })
+  terminal(nil, { border = "rounded" })
 end, { desc = "Term with border" })
 
 vim.keymap.set("n", "<C-S>", "<CMD>wa<CR>", { desc = "Save all files" })
