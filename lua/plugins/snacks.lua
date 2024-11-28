@@ -14,5 +14,11 @@ return {
     terminal = {
       enabled = true,
     },
+    git = {
+      enabled = true,
+    },
+    dashboard = {
+      enabled = true,
+    },
   },
 }
