@@ -34,10 +34,7 @@ return {
       { "filetype", icon_only = true, separator = "", padding = { left = 0, right = 0 } },
     }
 
-    -- Remove
-    table.remove(opts.sections.lualine_x, 1)
-    table.remove(opts.sections.lualine_x, 2)
-
+    opts.sections.lualine_x = {}
     table.insert(opts.sections.lualine_y, { "filesize", padding = { left = 1, right = 1 } })
 
     opts.sections.lualine_z = {
