@@ -2,6 +2,7 @@ return {
   "folke/snacks.nvim",
   priority = 1000,
   lazy = false,
+  ---@type snacks.Config
   opts = {
     -- your configuration comes here
     -- or leave it empty to use the default settings
@@ -19,6 +20,27 @@ return {
     },
     dashboard = {
       enabled = true,
+      sections = {
+        {
+          section = "header",
+        },
+        {
+          section = "keys",
+          gap = 1,
+          padding = 1,
+        },
+        {
+          section = "startup",
+        },
+        {
+          section = "terminal",
+          cmd = "ascii-image-converter ~/.config/nvim/logo/batman.jpeg -c -C",
+          random = 10,
+          pane = 2,
+          ident = 4,
+          height = 30,
+        },
+      },
     },
   },
 }

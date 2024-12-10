@@ -11,10 +11,11 @@ return {
   "nvim-lualine/lualine.nvim",
   opts = function(_, opts)
     local icons = LazyVim.config.icons
-    opts.options.section_separators = { left = "", right = "" }
-    opts.options.component_separators = { left = "", right = "" }
-    opts.sections.lualine_c = {
-      LazyVim.lualine.root_dir(),
+    opts.options.section_separators = { left = "", right = "" }
+    opts.options.component_separators = { left = "|", right = "|" }
+    opts.sections.lualine_b = {
+      "branch",
+      "diff",
       {
         "diagnostics",
         symbols = {
@@ -23,9 +24,12 @@ return {
           hint = icons.diagnostics.Hint,
           error = icons.diagnostics.Error,
         },
-        separator = "",
+        separator = "|",
         padding = { left = 2, right = 0 },
       },
+    }
+    opts.sections.lualine_c = {
+      LazyVim.lualine.root_dir(),
       { "filename", path = 1, separator = "" },
       { "filetype", icon_only = true, separator = "", padding = { left = 0, right = 0 } },
     }
@@ -54,6 +58,7 @@ return {
         "fzf",
         "ministarter",
         "lazyterm",
+        "snacks_dashboard",
       },
     }
   end,
