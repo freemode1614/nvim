@@ -11,7 +11,7 @@ return {
   "nvim-lualine/lualine.nvim",
   opts = function(_, opts)
     local icons = LazyVim.config.icons
-    opts.options.section_separators = { left = "", right = "" }
+    opts.options.section_separators = { left = " ", right = " " }
     opts.options.component_separators = { left = "|", right = "|" }
     opts.sections.lualine_b = {
       "branch",
@@ -35,7 +35,9 @@ return {
     }
 
     opts.sections.lualine_x = {}
-    table.insert(opts.sections.lualine_y, { "filesize", padding = { left = 1, right = 1 } })
+    opts.sections.lualine_y = {
+      { "filesize", padding = { left = 1, right = 1 } },
+    }
 
     opts.sections.lualine_z = {
       function()
@@ -56,6 +58,7 @@ return {
         "ministarter",
         "lazyterm",
         "snacks_dashboard",
+        "neo-tree",
       },
     }
   end,
