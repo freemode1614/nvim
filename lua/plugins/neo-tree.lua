@@ -5,11 +5,11 @@ return {
     cmd = "Neotree",
     opts = {
       window = {
-        position = "float",
-        popup = {
-          size = { height = "80%", width = "60" },
-          position = "5",
-        },
+        position = "left",
+        -- popup = {
+        --   size = { height = "80%", width = "60" },
+        --   position = "5",
+        -- },
       },
       filesystem = {
         filtered_items = {
