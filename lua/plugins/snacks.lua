@@ -32,14 +32,14 @@ return {
         {
           section = "startup",
         },
-        {
-          section = "terminal",
-          cmd = "ascii-image-converter ~/.config/nvim/logo/batman.jpeg -c -C",
-          random = 10,
-          pane = 2,
-          ident = 4,
-          height = 30,
-        },
+        -- {
+        --   section = "terminal",
+        --   cmd = "ascii-image-converter ~/.config/nvim/logo/batman.jpeg -c -C",
+        --   random = 10,
+        --   pane = 2,
+        --   ident = 4,
+        --   height = 30,
+        -- },
       },
     },
   },
