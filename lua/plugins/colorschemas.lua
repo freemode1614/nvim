@@ -3,8 +3,13 @@ local transparent = true
 return {
 
   {
-    "morhetz/gruvbox",
+    "ellisonleao/gruvbox.nvim",
     priority = 1000,
+    opts = {
+      transparent_mode = transparent,
+      contrast = "hard",
+      dim_inactive = true,
+    },
   },
   {
     "catppuccin/nvim",
