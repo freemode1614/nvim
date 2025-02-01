@@ -6,21 +6,21 @@ return {
     },
     keys = {
       {
-        "<leader>ns",
+        "<leader>ms",
         function()
           require("package-info").show()
         end,
         desc = "Show dependency versions",
       },
       {
-        "<leader>nc",
+        "<leader>mc",
         function()
           require("package-info").hide()
         end,
         desc = "Hide dependency versions",
       },
       {
-        "<leader>nt",
+        "<leader>mt",
         function()
           require("package-info").toggle()
         end,
