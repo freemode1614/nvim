@@ -26,6 +26,34 @@ return {
         end,
         desc = "Toggle dependency versions",
       },
+      {
+        "<leader>mu",
+        function()
+          require("package-info").update()
+        end,
+        desc = "Update dependency on the line",
+      },
+      {
+        "<leader>mi",
+        function()
+          require("package-info").update()
+        end,
+        desc = "Install dependency on the line",
+      },
+      {
+        "<leader>md",
+        function()
+          require("package-info").update()
+        end,
+        desc = "Delete dependency on the line",
+      },
+      {
+        "<leader>mp",
+        function()
+          require("package-info").change_version()
+        end,
+        desc = "Install a different dependency versions",
+      },
     },
     config = function()
       require("package-info").setup({
