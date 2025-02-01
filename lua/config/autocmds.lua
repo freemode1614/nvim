@@ -22,3 +22,12 @@ vim.api.nvim_create_autocmd("VimEnter", {
     vim.cmd("hi Normal ctermbg=none")
   end,
 })
+
+vim.api.nvim_create_autocmd("VimEnter", {
+  pattern = { "*" },
+  callback = function()
+    vim.cmd([[highlight PackageInfoUpToDateVersion guifg=]] .. "#3C4048")
+    vim.cmd([[highlight PackageInfoOutdatedVersion guifg=]] .. "#d19a66")
+    vim.cmd([[highlight PackageInfoInvalidVersion guifg=]] .. "#ee4b2b")
+  end,
+})
