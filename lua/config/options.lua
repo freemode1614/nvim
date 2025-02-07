@@ -4,7 +4,7 @@
 
 vim.o.background = "dark"
 vim.g.lazyvim_python_lsp = "basedpyright"
-vim.g.lazyvim_python_ruff = "ruff_lsp"
+vim.g.lazyvim_python_ruff = "ruff"
 vim.g.lazyvim_picker = "fzf"
 
 if vim.g.neovide then
