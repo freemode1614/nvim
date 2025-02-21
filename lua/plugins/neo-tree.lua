@@ -4,9 +4,6 @@ return {
     branch = "v3.x",
     cmd = "Neotree",
     dependencies = {
-      "nvim-lua/plenary.nvim",
-      "nvim-tree/nvim-web-devicons",
-      "MunifTanjim/nui.nvim",
       {
         "s1n7ax/nvim-window-picker",
         version = "2.*",
@@ -39,13 +36,6 @@ return {
             ".DS_Store",
           },
           hide_dotfiles = false,
-        },
-      },
-      default_component_configs = {
-        indent = {
-          with_expanders = true,
-          expander_collapsed = "",
-          expander_expanded = "",
         },
       },
       follow_current_file = {
