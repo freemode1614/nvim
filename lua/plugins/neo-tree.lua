@@ -31,7 +31,7 @@ return {
       retain_hidden_root_indent = true,
       filesystem = {
         filtered_items = {
-          show_hidden_count = false,
+          show_hidden_count = true,
           never_show = {
             ".DS_Store",
           },
