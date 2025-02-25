@@ -39,18 +39,39 @@ return {
     },
   },
   {
-    "f-person/auto-dark-mode.nvim",
-    enabled = false,
+    "baliestri/aura-theme",
+    lazy = false,
+    priority = 1000,
+    config = function(plugin)
+      vim.opt.rtp:append(plugin.dir .. "/packages/neovim")
+      -- vim.cmd([[colorscheme aura-dark-soft-text]])
+    end,
+  },
+  {
+    "EdenEast/nightfox.nvim",
     opts = {
-      -- your configuration comes here
-      -- or leave it empty to use the default settings
-      -- refer to the configuration section below
+      transparent = transparent,
+      -- dim_inactive = true,
     },
   },
   {
+    "rose-pine/neovim",
+    name = "rose-pine",
+    opts = {
+      transparent = transparent,
+    },
+  },
+  { "nyoom-engineering/oxocarbon.nvim" },
+  { "olimorris/onedarkpro.nvim" },
+  { "scottmckendry/cyberdream.nvim", opts = {
+    transparent = transparent,
+    italic_comments = true,
+  } },
+  { "AlexvZyl/nordic.nvim" },
+  {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "catppuccin",
+      colorscheme = "cyberdream",
     },
   },
 }
