@@ -37,6 +37,11 @@ return {
           },
           hide_dotfiles = false,
         },
+        window = {
+          mappings = {
+            ["<"] = "open_in_system_explorer",
+          },
+        },
       },
       follow_current_file = {
         enabled = true, -- This will find and focus the file in the active buffer every time
