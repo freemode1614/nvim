@@ -39,7 +39,7 @@ return {
         },
         window = {
           mappings = {
-            ["<"] = "open_in_system_explorer",
+            -- ["<"] = "open_in_system_explorer",
           },
         },
       },
