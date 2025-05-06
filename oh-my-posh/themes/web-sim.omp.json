@@ -3,6 +3,35 @@
   "blocks": [
     {
       "type": "prompt",
+      "alignment": "left",
+      "newline": true,
+      "overflow": "break",
+      "segments": [
+        {
+          "type": "path",
+          "style": "powerline",
+          "foreground": "#ffafd2",
+          "properties": {
+            "style": "agnoster_short",
+            "home_icon": "home",
+            "folder_icon": "\uf07b",
+            "folder_separator_icon": " \u276f "
+          },
+          "template": " \ue5ff {{ .Path }} "
+        },
+        {
+          "type": "git",
+          "style": "powerline",
+          "foreground": "#f14e32",
+          "properties": {
+            "branch_icon": "\ue725 "
+          },
+          "template": "({{ .HEAD }})"
+        }
+      ]
+    },
+    {
+      "type": "prompt",
       "alignment": "right",
       "overflow": "hide",
       "segments": [
@@ -23,35 +52,12 @@
           "style": "powerline",
           "foreground": "#906cff",
           "template": "  {{ .Full }} "
-        }
-      ]
-    },
-    {
-      "type": "prompt",
-      "alignment": "left",
-      "newline": true,
-      "overflow": "break",
-      "segments": [
-        {
-          "type": "path",
-          "style": "powerline",
-          "foreground": "#ffafd2",
-          "properties": {
-            "style": "agnoster_short",
-            "home_icon": "home",
-            "folder_icon": "\uf07b",
-            "folder_separator_icon": " \u276f "
-          },
-          "template": "\ue5ff {{ .Path }} "
         },
         {
-          "type": "git",
+          "type": "lua",
           "style": "powerline",
-          "foreground": "#f14e32",
-          "properties": {
-            "branch_icon": "\ue725 "
-          },
-          "template": "({{ .HEAD }})"
+          "foreground": "blue",
+          "template": "  {{ .Full }} "
         }
       ]
     },
@@ -67,7 +73,7 @@
           "properties": {
             "always_enabled": true
           },
-          "template": "<#00c7fc>\u276f</>_: "
+          "template": " <#00c7fc>\u276f</>_: "
         }
       ]
     }
