@@ -17,6 +17,12 @@
           "style": "powerline",
           "foreground": "#FE4A49",
           "template": "<#F3EFF5>and</> 󰋁 {{ .Full }} "
+        },
+        {
+          "type": "python",
+          "style": "powerline",
+          "foreground": "#906cff",
+          "template": "  {{ .Full }} "
         }
       ]
     },
@@ -31,7 +37,7 @@
           "style": "powerline",
           "foreground": "#ffafd2",
           "properties": {
-            "style": "agnoster_full",
+            "style": "agnoster_short",
             "home_icon": "home",
             "folder_icon": "\uf07b",
             "folder_separator_icon": " \u276f "
@@ -66,11 +72,5 @@
       ]
     }
   ],
-  "console_title_template": "{{ .Folder }}",
-  "transient_prompt": {
-    "background": "transparent",
-    "foreground": "#FEF5ED",
-    "template": "{{ .Shell }}"
-  },
   "version": 3
 }
