@@ -12,7 +12,7 @@
           "style": "powerline",
           "foreground": "#ffafd2",
           "properties": {
-            "style": "agnoster_short",
+            "style": "agnoster_full",
             "home_icon": "home",
             "folder_icon": "\uf07b",
             "folder_separator_icon": " \u276f "
