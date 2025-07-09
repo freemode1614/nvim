@@ -7,13 +7,20 @@ return {
     opts = {
       -- add any opts here
       -- for example
-      provider = "lms",
+      provider = "qwq",
       vendors = {
-        lms = {
+        ["qwq"] = {
           __inherited_from = "openai",
-          api_key_name = "",
-          endpoint = "http://localhost:1234/v1",
-          model = "deepseek-r1-distill-qwen-7b",
+          api_key_name = "OPENAI_API_KEY",
+          endpoint = "http://172.31.2.74:3000/v1",
+          model = "qwq:32b",
+          disable_tools = true,
+        },
+        ["qwen3_30b"] = {
+          __inherited_from = "openai",
+          api_key_name = "OPENAI_API_KEY",
+          endpoint = "https://ncsgpt.ncsi.com.cn/vllm/qwen3_30b/v1",
+          model = "qwen3-30b",
           disable_tools = true,
         },
       },
