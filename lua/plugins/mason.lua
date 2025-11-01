@@ -9,7 +9,7 @@
 return {
   {
     "mason-org/mason.nvim",
-    version = "^1.0.0",
+    -- version = "^1.0.0",
     -- opts = function(_, opts)
     --   local ensure_installed = {}
     --   for i = 1, #opts.ensure_installed do
@@ -23,7 +23,7 @@ return {
   },
   {
     "mason-org/mason-lspconfig.nvim",
-    version = "^1.0.0",
+    -- version = "^1.0.0",
     -- opts = function(_, opts)
     --   print(opts)
     -- end,

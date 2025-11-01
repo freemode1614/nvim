@@ -6,7 +6,8 @@
 vim.api.nvim_create_autocmd("BufRead", {
   pattern = { "*" },
   callback = function()
-    vim.cmd("TSBufEnable highlight")
+    pcall(vim.cmd.TSBufEnable, "highlight")
+    -- vim.cmd("TSBufEnable highlight")
   end,
 })
 
