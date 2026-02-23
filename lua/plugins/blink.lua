@@ -8,13 +8,13 @@ return {
     ---@type blink.cmp.Config
     opts = {
         sources = {
-            -- default = { "lsp", "path", "luasnip", "buffer", "avante" },
-            -- providers = {
-            --   avante = {
-            --     module = "blink-cmp-avante",
-            --     name = "Avante",
-            --   },
-            -- },
+            -- default = { "lsp", "path", "luasnip", "buffer", --[["avante"]] },
+            providers = {
+                avante = {
+                    module = "blink-cmp-avante",
+                    name = "Avante",
+                },
+            },
         },
         completion = {
             list = {
