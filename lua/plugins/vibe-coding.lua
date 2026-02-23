@@ -11,17 +11,28 @@ return {
   opts = {
     provider = "minimax",
     providers = {
-      ["MiniMax-M2.5"] = {
+      minimax = {
+        __inherited_from = "openai",
         endpoint = "http://172.31.2.45",
         model = "MiniMax-M2.5",
-        timeout = 30000, -- Timeout in milliseconds
-      },
-      ["MiniMax-M2.1"] = {
-        endpoint = "http://172.31.2.45",
-        model = "MiniMax-M2.1",
-        timeout = 30000, -- Timeout in milliseconds
+        api_key = "sk-Qh6c_Geim64HXPj6azdllmgjURHgchwhM-JJD6VPp5c",
       },
     },
+    selector = {
+      provider = "snacks",
+      provider_opt = {
+        title = "Avante Input",
+        icon = " ",
+      },
+    },
+    -- vendors = {
+    --     minimax = {
+    --         __inherited_from = "openai",
+    --         endpoint = "http://172.31.2.45",
+    --         model = "MiniMax-M2.5",
+    --         api_key = "sk-Qh6c_Geim64HXPj6azdllmgjURHgchwhM-JJD6VPp5c",
+    --     },
+    -- },
   },
   dependencies = {
     "nvim-lua/plenary.nvim",
