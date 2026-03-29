@@ -73,6 +73,19 @@ vim.api.nvim_create_autocmd("VimEnter", {
   pattern = { "*" },
   callback = function()
     vim.cmd("hi Normal ctermbg=none")
+    
+    -- 光标行高亮 - 使用与 wezterm 浅色主题协调的颜色
+    -- 在亮色模式下使用柔和的灰色，暗色模式下使用深灰色
+    if vim.o.background == "light" then
+      vim.cmd("hi CursorLine guibg=#d8d4cf")
+      vim.cmd("hi CursorLineNr guifg=#616161 guibg=#d8d4cf")
+    else
+      vim.cmd("hi CursorLine guibg=#2a2e36")
+      vim.cmd("hi CursorLineNr guifg=#8b9198 guibg=#2a2e36")
+    end
+    
+    -- 光标颜色
+    vim.cmd("hi Cursor guibg=#1976d2 guifg=#ffffff")
   end,
 })
 
