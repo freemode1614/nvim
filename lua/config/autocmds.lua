@@ -77,10 +77,16 @@ vim.api.nvim_create_autocmd("VimEnter", {
     -- 光标行高亮 - 使用与 wezterm 浅色主题协调的颜色
     -- 在亮色模式下使用柔和的灰色，暗色模式下使用深灰色
     if vim.o.background == "light" then
-      vim.cmd("hi CursorLine guibg=#d8d4cf")
-      vim.cmd("hi CursorLineNr guifg=#616161 guibg=#d8d4cf")
+      -- 加深的背景色，解决透明模式下对比度不足问题
+      vim.cmd("hi CursorLine guibg=#c4c0bb")
+      vim.cmd("hi CursorLineNr guifg=#424242 guibg=#c4c0bb")
     else
+      -- 方案1：只改背景（保留语法高亮）
       vim.cmd("hi CursorLine guibg=#2a2e36")
+      
+      -- 方案2：同时改变文字颜色（会覆盖语法高亮）
+      -- vim.cmd("hi CursorLine guibg=#2a2e36 guifg=#e0e0e0")
+      
       vim.cmd("hi CursorLineNr guifg=#8b9198 guibg=#2a2e36")
     end
     
