@@ -85,8 +85,8 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      -- 使用 cyberdream，它会根据 vim.o.background 自动切换亮/暗
-      colorscheme = "cyberdream",
+      -- 默认主题，实际主题由 auto-dark-mode 插件控制
+      colorscheme = "nightfox",
     },
   },
 }

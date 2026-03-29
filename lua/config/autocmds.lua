@@ -3,49 +3,6 @@
 --
 -- Add any additional autocmds here
 
--- ============================================
--- 自动检测终端主题并切换 nvim 背景
--- ============================================
-
--- 根据 wezterm 设置的环境变量自动切换 light/dark 模式
-local function set_background_from_terminal()
-  -- 优先读取 wezterm 发送的 NVIM_BACKGROUND 环境变量
-  local nvim_bg = os.getenv("NVIM_BACKGROUND")
-  if nvim_bg == "light" then
-    vim.o.background = "light"
-  elseif nvim_bg == "dark" then
-    vim.o.background = "dark"
-  else
-    -- 回退：检测 COLORFGBG 环境变量
-    local colorfgbg = os.getenv("COLORFGBG")
-    if colorfgbg then
-      local bg = colorfgbg:match("^%d+;(%d+)$")
-      if bg then
-        local bg_num = tonumber(bg)
-        -- 0-6 是深色，7-15 是浅色，232-255 是灰度
-        if bg_num >= 7 and bg_num <= 15 then
-          vim.o.background = "light"
-          return
-        elseif bg_num >= 232 and bg_num <= 255 then
-          -- 灰度颜色
-          if bg_num >= 244 then
-            vim.o.background = "light"
-            return
-          end
-        end
-      end
-    end
-    -- 默认使用 dark
-    vim.o.background = "dark"
-  end
-end
-
--- 在 nvim 启动时检测
-vim.api.nvim_create_autocmd("VimEnter", {
-  pattern = "*",
-  callback = set_background_from_terminal,
-})
-
 vim.api.nvim_create_autocmd("BufRead", {
   pattern = { "*" },
   callback = function()
@@ -69,30 +26,35 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
   end,
 })
 
+-- 光标行高亮 - 与 wezterm 主题保持一致
+local function set_cursorline_colors()
+  vim.cmd("hi Normal ctermbg=none")
+  
+  -- nightfox (dark) / dawnfox (light)
+  if vim.o.background == "light" then
+    -- dawnfox 主题
+    vim.cmd("hi CursorLine guibg=#e8e0d8")
+    vim.cmd("hi CursorLineNr guifg=#625c87 guibg=#e8e0d8")
+  else
+    -- nightfox 主题
+    vim.cmd("hi CursorLine guibg=#2b3b51")
+    vim.cmd("hi CursorLineNr guifg=#71839b guibg=#2b3b51")
+  end
+  
+  -- 光标颜色
+  vim.cmd("hi Cursor guibg=#719cd6 guifg=#192330")
+end
+
+-- VimEnter 时设置
 vim.api.nvim_create_autocmd("VimEnter", {
   pattern = { "*" },
-  callback = function()
-    vim.cmd("hi Normal ctermbg=none")
-    
-    -- 光标行高亮 - 使用与 wezterm 浅色主题协调的颜色
-    -- 在亮色模式下使用柔和的灰色，暗色模式下使用深灰色
-    if vim.o.background == "light" then
-      -- 加深的背景色，解决透明模式下对比度不足问题
-      vim.cmd("hi CursorLine guibg=#c4c0bb")
-      vim.cmd("hi CursorLineNr guifg=#424242 guibg=#c4c0bb")
-    else
-      -- 方案1：只改背景（保留语法高亮）
-      vim.cmd("hi CursorLine guibg=#2a2e36")
-      
-      -- 方案2：同时改变文字颜色（会覆盖语法高亮）
-      -- vim.cmd("hi CursorLine guibg=#2a2e36 guifg=#e0e0e0")
-      
-      vim.cmd("hi CursorLineNr guifg=#8b9198 guibg=#2a2e36")
-    end
-    
-    -- 光标颜色
-    vim.cmd("hi Cursor guibg=#1976d2 guifg=#ffffff")
-  end,
+  callback = set_cursorline_colors,
+})
+
+-- ColorScheme 切换时也设置（auto-dark-mode 切换主题时触发）
+vim.api.nvim_create_autocmd("ColorScheme", {
+  pattern = { "*" },
+  callback = set_cursorline_colors,
 })
 
 vim.api.nvim_create_autocmd("VimEnter", {
