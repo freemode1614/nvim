@@ -59,8 +59,8 @@ return {
   },
   { "nyoom-engineering/oxocarbon.nvim" },
   { "olimorris/onedarkpro.nvim" },
-  { 
-    "scottmckendry/cyberdream.nvim", 
+  {
+    "scottmckendry/cyberdream.nvim",
     opts = {
       transparent = transparent,
       italic_comments = true,
