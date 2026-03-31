@@ -83,6 +83,14 @@ return {
   },
   { "AlexvZyl/nordic.nvim" },
   {
+    "folke/tokyonight.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {
+      transparent = transparent,
+    },
+  },
+  {
     "LazyVim/LazyVim",
     opts = {
       -- 默认主题，实际主题由 auto-dark-mode 插件控制
