@@ -94,7 +94,7 @@ return {
     "LazyVim/LazyVim",
     opts = {
       -- 默认主题，实际主题由 auto-dark-mode 插件控制
-      colorscheme = "nightfox",
+      colorscheme = "kanagawa-lotus",
     },
   },
 }
