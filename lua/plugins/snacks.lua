@@ -5,6 +5,9 @@ return {
   opts = {
     picker = {
       enabled = true,
+      jump = {
+        jumplist = false,
+      },
     },
     bigfile = { enabled = true },
     notifier = { enabled = true },
@@ -23,5 +26,8 @@ return {
     explorer = {
       enabled = false,
     },
+    image = {},
+    lazygit = {},
+    indent = {},
   },
 }
