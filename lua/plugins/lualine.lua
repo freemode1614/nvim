@@ -66,6 +66,7 @@ return {
         "lazyterm",
         "snacks_dashboard",
         "neo-tree",
+        "snacks_explorer",
       },
     }
   end,
